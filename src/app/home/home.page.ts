@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController) {}
+  login() {
+    //this.navCtrl.navigateRoot('/contatos');
+    this.navCtrl.navigateForward(['/contatos']);
+    console.log("ionViewEnter");
+  }
 
+  ionViewWillEnter() {
+    this.menuCtrl.swipeGesture(false);
+  }
+  ionViewWillLeave() {
+    this.menuCtrl.swipeGesture(true);
+  }
 }

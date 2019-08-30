@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-menu-toggle>
+    <ion-icon name="menu"></ion-icon>
+  </ion-menu-toggle>
+  <ion-toolbar>
+    <ion-title>Contatos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let item of items">
+          <ion-thumbnail slot="start">
+              <img src="http://sudema.pb.gov.br/jucep/imagens/{{item.id}}.jpg">
+          </ion-thumbnail>
+          <h2>{{item.title}}</h2>
+        </ion-item>
+      </ion-list>
+</ion-content>
+
+
+
+
+
+
